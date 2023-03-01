@@ -128,9 +128,11 @@ display: flex;
 width: 23%;
 }
 
-#navbar-top-right-section > div:nth-child(1){
+#navbar-top-right-section > a{
 /* border: 1px solid black; */
 margin-left: 20px;
+color: white;
+text-decoration: none;
 }
 
 #navbar-top-right-section > div:nth-child(1) p{
