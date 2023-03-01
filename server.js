@@ -8,15 +8,14 @@ function Register(event){
     var UserPassword = document.getElementById("UserPassword").value;
     var UserConfirmPassword = document.getElementById("UserConfirmPassword").value;
 
-    var Data = {UserName: UserName, UserNumber: UserNumber, UserEmail: UserEmail, 
-        UserPassword: UserPassword, UserConfirmPassword: UserConfirmPassword}
+    var Data = {Name: UserName, Number: UserNumber, Email: UserEmail, Password: UserPassword, ConfirmPassword: UserConfirmPassword}
 
     var DataFromLS = JSON.parse(localStorage.getItem("DataList")) || [];
    
     var flag = false;
 
    for(var i=0; i < DataFromLS.length; i++){
-    if(DataFromLS[i].email === UserEmail)
+    if(DataFromLS[i].Email === UserEmail)
     flag = true;
     }
 
@@ -36,7 +35,7 @@ function Register(event){
         else
          {
             DataFromLS.push(Data);
-            localStorage.setItem("Data", JSON.stringify(DataFromLS));
+            localStorage.setItem("DataList", JSON.stringify(DataFromLS));
             // console.log(DataFromLS, "DataFromLS");
             document.getElementById("UserName").value = '';
             document.getElementById("UserNumber").value = '';

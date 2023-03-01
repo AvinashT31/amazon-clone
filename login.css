@@ -53,3 +53,71 @@ form label, input{
     margin: 8px;
     margin-left: 20px;
 }
+
+
+
+@media screen and (max-width:912px){
+    form{
+        width: 40%;
+    }
+}
+
+
+@media screen and (max-width:820px){
+
+    form{
+        width: 40%;
+    }
+
+form input {
+    height: 35px;
+    width: 77%;
+    margin-left: 20px;
+}
+}
+
+
+@media screen and (max-width:414px){
+    #logo img{
+        width: 40%;
+    }
+
+   form{
+    width: 60%;
+   }
+
+   form input{
+    height: 32px;
+   }
+
+}
+
+
+@media screen and (max-width:393px){
+
+    form{
+        width: 75%;
+    }
+
+    form input{
+        height: 32px;
+    }
+}
+
+@media screen and (max-width:390px){
+    form {
+        width: 80%;
+    }
+}
+
+
+@media screen and (max-width:375px){
+    #logo img{
+        width: 40%;
+    }
+
+   form{
+    width: 75%;
+   }
+
+}
