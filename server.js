@@ -55,7 +55,35 @@ function Register(event){
 }
 
 
+function login(event){
+    
+    event.preventDefault() ;
+    // alert("Working");
 
+    var UserEmail = document.getElementById("UserEmail").value;
+    var UserPassword = document.getElementById ("UserPassword").value;
+
+    var DataFromLS = JSON.parse(localStorage.getItem("DataList"));
+
+    var flag = false;
+
+    for(var i=0; i < DataFromLS.length; i++){
+        if(DataFromLS[i].Email === UserEmail && DataFromLS[i].Password === UserPassword){
+            flag = true;
+        } 
+    }
+
+    if(flag === true){
+        document.getElementById("UserEmail").value =  '';
+        document.getElementById ("UserPassword").value = '';
+        window.location.href = "/index.html";
+        alert("login Successfully");
+    }
+    else{
+        alert("check your credential or please create your account");
+    }  
+       
+}
 
 
 
