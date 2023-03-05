@@ -12,7 +12,7 @@ function Register(event){
     var Data = {Name: UserName, Number: UserNumber, Email: UserEmail, 
         Password: UserPassword, ConfirmPassword: UserConfirmPassword}
 
-    var DataFromLS = JSON.parse(localStorage.getItem("DataList")) || [];
+    var DataFromLS = JSON.parse(localStorage.getItem("Amazon-Data")) || [];
 
     var flag = false;
 
@@ -41,14 +41,14 @@ function Register(event){
    else
    {
     DataFromLS.push(Data); 
-    localStorage.setItem("DataList", JSON.stringify(DataFromLS));   
+    localStorage.setItem("Amazon-Data", JSON.stringify(DataFromLS));   
     document.getElementById("UserName").value = '';
     document.getElementById("UserNumber").value = '';
     document.getElementById("UserEmail").value = '';
     document.getElementById("UserPassword").value = '';
     document.getElementById("UserConfirmPassword").value = '';
     console.log(DataFromLS, "DataFromLS");
-    alert('Working');
+    alert('Registration Done');
    }  
    
    
@@ -63,7 +63,7 @@ function login(event){
     var UserEmail = document.getElementById("UserEmail").value;
     var UserPassword = document.getElementById ("UserPassword").value;
 
-    var DataFromLS = JSON.parse(localStorage.getItem("DataList"));
+    var DataFromLS = JSON.parse(localStorage.getItem("Amazon-Data"));
 
     var flag = false;
 
@@ -85,11 +85,69 @@ function login(event){
        
 }
 
+var GettingEmail;
 
 
+function forgetPassword(event){
+
+    event.preventDefault();
+    // alert("working");
+
+    var Useremail = document.getElementById("UserEmail").value;
+    var GettingEmail = Useremail
+    console.log(GettingEmail, "GettingEmail");
+
+    var DataFromLS = JSON.parse(localStorage.getItem("Amazon-Data"));
+    console.log(DataFromLS, "DataFromLS");
+ 
+    flag = false;
+
+   for(var i=0; i < DataFromLS.length; i++){
+    if(DataFromLS[i].Email === Useremail){
+         flag = true;
+    }
+   }
+   console.log(Useremail, "Useremail");
+
+   if(flag === true){
+
+    var Password = `<label>Enter Your New Password</label><input type="password" id="password"/><br><button onclick = "NewPassword()">Set New Password</button>`
+    var DivFromHTML = document.getElementById("change");
+    console.log(Password, "Password");
+    DivFromHTML.innerHTML = Password;
+    alert("Set new Password")
+
+   }
+   else{
+    alert("please check your email first");
+   }
+
+}
 
 
+function NewPassword(){
+    alert("working");
 
+    var UserPassword = document.getElementById("password").value;
+    console.log(UserPassword, "UserPassword");
+
+    var DataFromLS = JSON.parse(localStorage.getItem("Amazon-Data"));
+    console.log(DataFromLS, "DataFromLS");
+
+    for(var i=0; i < DataFromLS.length; i++){
+        if(DataFromLS[i].Email === GettingEmail){
+            DataFromLS[i].Password = UserPassword;
+        }
+    }
+    // console.log(dataFromLS, "data");
+
+    localStorage.setItem("Amazon-Data", JSON.stringify(DataFromLS));
+    GettingEmail = '';
+        window.location.href = "/login.html";
+    alert("password Change Successfully");
+
+
+}
 
 
 
