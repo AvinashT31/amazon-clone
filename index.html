@@ -48,9 +48,12 @@
                     </div>
                     <div id="navbar-top-right-section">
                         <a href="Register.html">
-                            <p>Hello Sign in</p>  
+                            <p>Hello Sign in</p>
                             <p>Account & Lists</p>
                         </a>
+                        <div id="logout">
+
+                        </div>
                         <div>
                             <p>Return</p>
                             <p>& Orders</p>
@@ -440,6 +443,23 @@
             <img src="/img/web-screenshot-16-02-2023.jpg" alt="">
         </div>
     </div>
+    <script>
+         function check() {
+            var DataFromLS = JSON.parse(localStorage.getItem("current-user"));
+            if (DataFromLS) {
+                var divForlogout = document.getElementById("logout");
+                var logoutButton = `<button onclick = "logout()">logout</button>`
+                divForlogout.innerHTML = logoutButton;
+            }
+        }
+        check()
+
+        function logout(){
+            localStorage.removeItem("current-user");
+            window.location.reload();
+            alert("logout Successfully");
+        }
+    </script>
 </body>
 
 </html>

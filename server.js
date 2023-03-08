@@ -76,6 +76,12 @@ function login(event){
     if(flag === true){
         document.getElementById("UserEmail").value =  '';
         document.getElementById ("UserPassword").value = '';
+
+        var User = {};
+        User["Current-user-email"] = UserEmail;
+        console.log(User, "User")
+        localStorage.setItem("current-user", JSON.stringify(User));
+
         window.location.href = "/index.html";
         alert("login Successfully");
     }

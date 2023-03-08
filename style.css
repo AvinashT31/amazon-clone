@@ -139,28 +139,28 @@ text-decoration: none;
     color: white;
 }
 
-#navbar-top-right-section > div:nth-child(2){
+#navbar-top-right-section > div:nth-child(3){
     /* border: 1px solid black; */
     margin-left: 20px;
 }
 
-#navbar-top-right-section > div:nth-child(2) p{
+#navbar-top-right-section > div:nth-child(3) p{
     color: white;
 }
 
-#navbar-top-right-section > div:nth-child(3){
+#navbar-top-right-section > div:nth-child(4){
     /* border: 1px solid black; */
     margin-left: 20px;
     display: flex;
 }
 
-#navbar-top-right-section > div:nth-child(3) i{
+#navbar-top-right-section > div:nth-child(4) i{
    /* border: 1px solid black; */
    padding-top: 10px;
    color: white;
 }
 
-#navbar-top-right-section > div:nth-child(3) p{
+#navbar-top-right-section > div:nth-child(4) p{
     /* border: 1px solid black; */
     margin-left: 10px;
     padding-top: 10px;
