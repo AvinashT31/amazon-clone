@@ -11,6 +11,12 @@
 <body>
     <h1>Cart</h1>
 
+    <div id="cartProducts">
+
+    </div>
+
+    <button onclick="buyProducts()">click here</button>
+
     <script>
 
         window.onload = function () {
@@ -21,7 +27,66 @@
                 window.location.href = "/login.html";
                 alert("cant access the cart please login first");
             }
+            else{
+                var DataFromLS = JSON.parse(localStorage.getItem("Amazon-Data"));
+                console.log(DataFromLS, "DataFromLS");
+
+                var currentUser = JSON.parse(localStorage.getItem("current-user"));
+                console.log(currentUser, "currentUser");
+
+                var divFromHtml = document.getElementById("cartProducts");
+                console.log(divFromHtml, "divFromHtml");
+
+                var cartProducts;
+
+                var flag = false
+
+                for(var i =0; i < DataFromLS.length; i++){
+                    if(DataFromLS[i].Email === currentUser["Current-user-email"] && DataFromLS[i].cartProducts){
+                        cartProducts = DataFromLS[i].cartProducts;
+                        console.log(cartProducts, "cartProducts")
+                        flag = true;
+                    }
+                }
+                if(flag === false){
+                    alert("No products added into cart");
+                }
+                else{
+                    console.log(cartProducts, "cartProducts");
+                    var productWithHtml = [];
+
+                    for(var i = 0; i < cartProducts.length; i++){
+                        productWithHtml += `<div><img src = "${cartProducts[i].image}"></img>
+                            <h4>${cartProducts[i].name}<h4><p>${cartProducts[i].price}</p></div>`
+                    }
+                    divFromHtml.innerHTML = productWithHtml;
+                }
+            }
         }
+
+        function buyProducts(){
+            // alert("working");
+
+            var DataFromLS = JSON.parse(localStorage.getItem("Amazon-Data"));
+            var currentUser = JSON.parse(localStorage.getItem("current-user"));
+            
+            var updatedUser = [];
+
+            for(var i =0; i < DataFromLS.length; i++){
+                    if(DataFromLS[i].Email === currentUser["Current-user-email"] && DataFromLS[i].cartProducts){
+                        DataFromLS[i].cartProducts = [];
+                        updatedUser.push(DataFromLS[i]);
+                    }
+                    else{
+                        updatedUser.push(DataFromLS[i]);
+                    }
+                }
+
+                localStorage.setItem("Amazon-Data", JSON.stringify(updatedUser));
+                window.location.href = "/womens(showproduct).html";
+                alert("product delivered soon");
+        }
+
     </script>
 </body>
 
