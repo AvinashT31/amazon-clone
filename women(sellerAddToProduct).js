@@ -15,6 +15,10 @@ function AddTheProduct(event){
     console.log(dataFromLS, "dataFromLS");
 
     localStorage.setItem("products", JSON.stringify(dataFromLS ));
+    
+    document.getElementById("image").value = '';
+    document.getElementById("name").value = '';
+    document.getElementById("price").value = '';
     alert("product add to the website");
 
 }
