@@ -19,7 +19,7 @@ window.onload = function(){
 function AddToCart(pro){
     // alert("Working");
     var product = JSON.stringify(pro);
-    console.log(product);
+      console.log(product);
 
     var DataFromLS = JSON.parse(localStorage.getItem("Amazon-Data"));
     var currentUser = JSON.parse(localStorage.getItem("current-user"));
@@ -29,7 +29,7 @@ function AddToCart(pro){
 
         for(var i=0; i<DataFromLS.length; i++){
             if(DataFromLS[i].Email === currentUser["Current-user-email"]){
-                var newObj = DataFromLS[i];
+                var newObj = DataFromLS[i];  
                 newObj["cartProducts"] = newObj["cartProducts"] || [];
                 newObj["cartProducts"].push(JSON.parse(product));
                 allUsers.push(newObj)
@@ -42,7 +42,7 @@ function AddToCart(pro){
         alert("products added into cart")
     }
     else{
-        alert("login first to add product into cart");
+          alert("login first to add product into cart");
     }
-    
+      
 }
