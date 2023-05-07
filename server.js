@@ -49,6 +49,7 @@ function Register(event){
     document.getElementById("UserConfirmPassword").value = '';
     console.log(DataFromLS, "DataFromLS");
     alert('Registration Done');
+    window.location.href="/Login.html";
    }  
    
    
