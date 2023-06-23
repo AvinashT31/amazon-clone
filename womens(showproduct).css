@@ -454,6 +454,7 @@ text-decoration: none;
     height: 700px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap; 
 }
 
 

@@ -153,7 +153,6 @@ function NewPassword(){
         window.location.href = "/login.html";
     alert("password Change Successfully");
 
-
 }
 
 

@@ -19,6 +19,6 @@ function AddTheProduct(event){
     document.getElementById("image").value = '';
     document.getElementById("name").value = '';
     document.getElementById("price").value = '';
+    window.location.href = "/index.html";
     alert("product add to the website");
-
 }
