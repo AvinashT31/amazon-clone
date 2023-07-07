@@ -10,7 +10,12 @@ window.onload = function(){
     var array = [];
 
     for(var i=0; i< productData.length; i++){
-        array += `<div><img src =${productData[i].image}></img><h4>${productData[i].name}</h4><p>${productData[i].price}</p><button onclick = 'AddToCart(${(JSON.stringify(productData[i]))})'>Add to cart</button></div>`
+        array += `<div class="showp">
+        <img src =${productData[i].image}></img>
+        <h4>${productData[i].name}</h4>
+        <p> &#8377 ${productData[i].price}</p>
+        <button onclick = 'AddToCart(${(JSON.stringify(productData[i]))})'>Add to cart</button>
+        </div>`
     }
     divFromHtml.innerHTML = array;
     // console.log(array, "array");

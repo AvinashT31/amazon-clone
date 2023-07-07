@@ -5,17 +5,119 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cart.css">
+    <script src="https://kit.fontawesome.com/6d819e768f.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 
 <body>
-    <h1>Cart</h1>
 
-    <div id="cartProducts">
+    <div class="cart">
+        <div id="container">
+            <div id="navbar">
+                <div id="navbar-top">
+                    <div id="navbar-top-logo">
+                       <a href="/women(seller).html"><img src="data:image/png;base64,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"
+                            alt=""></a> 
+                    </div>
+                    <div id="navbar-top-location">
+                        <div>
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <p>Hello</p>
+                            <p>select your address</p>
+                        </div>
+                    </div>
+                    <div id="navbar-top-search">
+                        <div>
+                            <div>
+                                <p>All</p>
+                            </div>
+                            <div>
+                                <i class="fa-sharp fa-solid fa-caret-down"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <input type="text" placeholder="Search Amazon.in">
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                    </div>
+                    <div id="navbar-top-right-section">
+                        <a id="logout" href="Register.html">
+                            <p>Hello Sign in</p>
+                            <p>Account & Lists</p>
+                        </a>
+                        <div>
 
+                        </div>
+                        <div>
+                            <p>Return</p>
+                            <p>& Orders</p>
+                        </div>
+                        <a href="/cart.html"><div>
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <p>Cart</p>
+                        </div></a>
+                    </div>
+                </div>
+            </div>
+            <div id="navbar-bottom">
+                <div id="navbar-bottom-left">
+                    <div>
+                        <i class="fa-solid fa-bars"></i>
+                        <p>All</p>
+                    </div>
+                    <div id="navbar-bttom-item">
+                        <ul>
+                            <li><a href="/womens(showproduct).html">Amazon miniTV</a></li>
+                            <li><a href="/womens(showproduct).html">Best Seller</a></li>
+                            <li><a href="/womens(showproduct).html">Mobiles</a></li>
+                            <li><a href="/womens(showproduct).html">Customer Service</a></li>
+                            <li><a href="/womens(showproduct).html">Today's Deals</a></li>
+                            <li><a href="/womens(showproduct).html">Electronics</a></li>
+                            <li><a href="/womens(showproduct).html">Amazon Pay</a></li>
+                            <li><a href="/womens(showproduct).html">Prime</a></li>
+                            <li><a href="/womens(showproduct).html">Fashion</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div id="navbar-bottom-right">
+                    <img src="https://m.media-amazon.com/images/G/31/AmazonVideo/2021/X-site/SingleTitle/Farzi-Launch/400x39-SWM_NP._CB613859124_.jpg"
+                        alt="offer image">
+                </div>
+            </div>
+        </div>
+
+        <div id="cartProducts">
+            <!-- <div class="cartproducts-one">
+                <h1>Shopping cart</h1>
+                <hr>
+                <div class="cartproduct-show">
+                    <div class="cartproduct-show-one">
+
+                    </div>
+                    <div class="cartproduct-show-two">
+                        <p style="font-size: 24px;">T-shirt</p>
+                        <h2>&#8377 699.00</h2>
+                        <p style="color: rgb(173,146,0);">In Stock</p>
+                        <p style="font-weight: 800;">Size: <span style="font-weight: 100;">M</span></p>
+                        <p style="font-size: 20px;">Subtotal:</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="cartProducts-two">
+                <p style="font-size: 24px; margin-left: 5%; margin-top: 5%;">Subtotal:</p>
+                <button onclick="buyProducts()">Proceed to Buy</button>
+            </div> -->
+        </div>
     </div>
 
-    <button onclick="buyProducts()">click here</button>
+
 
     <script>
 
@@ -56,8 +158,30 @@
                     var productWithHtml = [];
 
                     for (var i = 0; i < cartProducts.length; i++) {
-                        productWithHtml += `<div><img src = "${cartProducts[i].image}"></img>
-                            <h4>${cartProducts[i].name}<h4><p>${cartProducts[i].price}</p></div>`
+                        productWithHtml += `
+                        <div class="cartproducts-one">
+                <h1>Shopping cart</h1>
+                <hr>
+                <div class="cartproduct-show">
+                    <div class="cartproduct-show-one">
+                        <img src = "${cartProducts[i].image}"></img>
+                    </div>
+                    <div class="cartproduct-show-two">
+                        <p style="font-size: 24px;">${cartProducts[i].name}</p>
+                        <h2>&#8377 ${cartProducts[i].price}</h2>
+                        <p style="color: rgb(173,146,0);">In Stock</p>
+                        <p style="font-weight: 800;">Size: <span style="font-weight: 100;">M</span></p>
+                        <p style="font-size: 20px;">Subtotal: &#8377 ${cartProducts[i].price}</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="cartProducts-two">
+                <p style="font-size: 24px; margin-left: 5%; margin-top: 5%;">Subtotal: &#8377 ${cartProducts[i].price}</p>
+                <button onclick="buyProducts()">Proceed to Buy</button>
+            </div>
+            </div>
+            `
                     }
                     divFromHtml.innerHTML = productWithHtml;
                 }
@@ -86,6 +210,23 @@
             window.location.href = "/womens(showproduct).html";
             alert("product delivered soon");
         }
+
+        function check() {
+            var DataFromLS = JSON.parse(localStorage.getItem("current-user"));
+            if (DataFromLS) {
+                var divForlogout = document.getElementById("logout");
+                var logoutButton = `<button onclick = "logout()">logout</button>`
+                divForlogout.innerHTML = logoutButton;
+            }
+        }
+        check()
+
+        function logout() {
+            localStorage.removeItem("current-user");
+            window.location.reload();
+            alert("logout Successfully");
+        }
+
 
     </script>
 </body>
